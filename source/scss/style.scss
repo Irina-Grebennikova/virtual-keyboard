@@ -1,2 +1,124 @@
 @import 'null';
 
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    margin-top: 25px;
+    font-size: 30px;
+    color: #202020;
+    text-align: center;
+    font-weight: 700;
+}
+
+.input {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #202020;
+    border-radius: 2px;
+    width: 100%;
+    height: 200px;
+    font-size: 16px;
+}
+
+// KEYBOARD=========================================================================================================
+.keyboard {
+    padding: 20px;
+    background-color: #202020;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+
+.key {
+    height: 50px;
+    min-width: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    border: {
+        color: #303030 #303030 #030303;
+        style: solid;
+        width: 1px 2px 3.5px 2px;
+        radius: 4px;
+    }
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+        background-color: #4c4b4b;
+    }
+    &:active {
+        transform: translateY(2px) scale(0.98);
+        border-bottom-width: 2px;
+    }
+}
+
+.modifier-key {
+    font-size: 14px;
+}
+
+.backspace,
+.enter,
+.shift,
+.space {
+    flex: 1 1 auto;
+}
+
+.tab {
+    width: 70px;
+}
+
+.caps-lock {
+    width: 90px;
+}
+
+.ctrl {
+    width: 60px;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+
+    border: {
+        color: transparent transparent #fff;
+        style: solid;
+        width: 0 7px 13px;
+    }
+}
+
+.arrow-left {
+    transform: rotate(-90deg);
+}
+
+.arrow-bottom {
+    transform: rotate(180deg);
+}
+
+.arrow-right {
+    transform: rotate(90deg);
+}
+// KEYBOARD=========================================================================================================
+
+.info {
+    text-align: center;
+    margin-top: 20px;
+    p:first-child {
+        margin-bottom: 15px;
+    }
+}
+
