@@ -172,9 +172,23 @@ function generateKeyText(dataAttr) {
     })
 }
 
-generateKeyText('lowEng');
+if (sessionStorage.lang === 'ru') {
+    generateKeyText('lowRu');
+} else {
+    generateKeyText('lowEng');
+}
 
-
+document.addEventListener('keydown', function(event) {
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey) {
+        if (charKeys[0].textContent === charKeys[0].dataset.lowEng) {
+            generateKeyText('lowRu');
+            sessionStorage.setItem('lang', 'ru');
+        } else {
+            generateKeyText('lowEng');
+            sessionStorage.setItem('lang', 'eng');
+        }
+    }
+  });
 
 
 
@@ -194,8 +208,8 @@ const info = document.querySelector('.info');
 
 createElem('p', 'Клавиатура создана в операционной системе Windows', info, '');
 
-// const keybindingInfo = createElem('p', '', info, '');
-// keybindingInfo.innerHTML = 'Для переключения языка комбинация: левыe <b>ctrl</b> + <b>shift</b>';
+const keybindingInfo = createElem('p', '', info, '');
+keybindingInfo.innerHTML = 'Для переключения языка комбинация: левыe <b>ctrl</b> + <b>shift</b>';
 
 
 
