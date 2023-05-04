@@ -7,7 +7,7 @@
     "eslint-plugin-import": "^2.27.5"
   },
   "scripts": {
-    "lint": "eslint ./js",
-    "lint:fix": "eslint ./js --fix"
+    "lint": "eslint ./source/js",
+    "lint:fix": "eslint ./source/js --fix"
   }
 }
